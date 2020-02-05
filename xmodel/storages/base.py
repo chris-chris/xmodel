@@ -2,6 +2,15 @@ import abc
 import copy
 
 from xmodel import structs
+from xmodel import type_checking
+
+if type_checking.TYPE_CHECKING:
+    from typing import Any  # NOQA
+    from typing import Dict  # NOQA
+    from typing import List  # NOQA
+    from typing import Optional  # NOQA
+
+    from optuna import distributions  # NOQA
 
 
 class BaseStorage(object, metaclass=abc.ABCMeta):
